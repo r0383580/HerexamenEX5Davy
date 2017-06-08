@@ -19,7 +19,7 @@ var app = express();
 app.use(parser.json());
 
 // opvangen van een GET op /Locations. 
-app.get("/locaties", function (request, response) {
+app.get("/locations", function (request, response) {
   //stuurt als antwoord de inhoud van onze database. Standaard in json terug gestuurd.
   response.send(dal.listAllLocations());
 });
@@ -28,7 +28,7 @@ app.get("/locaties", function (request, response) {
 app.get("/locations/:id", function (request, response) {
   var location = dal.findlocation(request.params.id);
   if(location) {
-    response.send(locatie);
+    response.send(location);
   }else {
     response.status(404).send();
   }
