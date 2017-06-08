@@ -1,34 +1,18 @@
 
 module.exports =  {
-  Locations : {},
+  books : {},
   
-  saveLocation : function(location){
-    this.Locations[location.id]= location;
+  saveBook : function(book){
+    this.books[book.id]= book;
   },
-  AllLocation : function(){
+  listAllBooks : function(){
     var rtnValue =[];
-    for (var item in this.Locations ) {
-      rtnValue.push(this.Locations [item]);
+    for (var item in this.books) {
+      rtnValue.push(this.books[item]);
     };
     return rtnValue;
   },
-  findLocation : function(id){
-    return this.Locations [id];
-  },
-  
-   NumPresent: {},
-  
-    saveNumPresentLocation : function(location){
-    this.books[location.id]= location;
-  },
-  AllNumPresent : function(){
-    var rtnValue =[];
-    for (var item in this.present) {
-      rtnValue.push(this.persent[item]);
-    };
-    return rtnValue;
-  },
-  findNumPresentLocation : function(){
-    return this.NumPresent[Name];
+  findBook : function(id){
+    return this.books[id];
   }
 };
